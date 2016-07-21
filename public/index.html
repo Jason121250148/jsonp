@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨域访问</title>
+    <script src="./jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+</body>
+<script src="./index.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var callback = function(res){
+        console.log(res);
+    };
+    jsonp("http://127.0.0.1:8080/jsonp", "sum", { "a": 1, "b": 2 }, callback);
+    jsonp("http://127.0.0.1:8080/jsonp", "sum", { "a": 2, "b": 3 }, callback);
+
+    jqueryP("http://127.0.0.1:8080/jqueryP", "sum", { "a": 3, "b": 4 }, callback);
+    jqueryP("http://127.0.0.1:8080/jqueryP", "sum", { "a": 4, "b": 5 }, callback);
+
+</script>
+</html>
